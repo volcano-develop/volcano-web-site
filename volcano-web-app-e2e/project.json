@@ -1,0 +1,10 @@
+{
+  "name": "volcano-web-app-e2e",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "volcano-web-app-e2e/src",
+  "projectType": "application",
+  "tags": [],
+  "implicitDependencies": ["volcano-web-app"],
+  "// targets": "to see all targets run: nx show project volcano-web-app-e2e --web",
+  "targets": {}
+}
