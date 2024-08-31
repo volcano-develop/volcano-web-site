@@ -1,10 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+.section-title{
+  
+}
 .site-data {
-  height: 100%;
+  height: 100vh;
 }
 .site-section {
   width: 100%;
-  height: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-section-content{
+  width: 100%;
   margin: 0;
   padding: 0;
   display: flex;
@@ -13,6 +25,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+
 }
 .site-data-item {
   position: relative;
@@ -21,4 +34,8 @@
   transition: all 0.5s ease; /* Transizione fluida */
   margin: 0px;
   padding: 0px;
+  border: 1px dotted blue;
 }
+
+
+.svg-fill {fill: #747170; /* Colore di default */ bottom: 0;}

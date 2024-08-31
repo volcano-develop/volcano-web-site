@@ -1,4 +1,14 @@
 import {SiteData, SiteDataItem, SiteSection} from './models'
+export var verticalFactorVar = 1.5;
+export var horizonthalFactorVar = 3.1;
+
+export function setVerticalFactor(v: number){
+    verticalFactorVar = v;
+}
+export function setHorizonthalFactor(v: number){
+    horizonthalFactorVar = v;
+}
+
 const htmlTemplateLogo = `
     <div class="pittogramma">
                     
@@ -41,38 +51,62 @@ export const data: SiteData = {
                     id:100,
                     html: htmlTemplateLogo,
                     title: "",
-                    children: []
-                },
-                {
-                    id:100,
-                    html: "<p>Ciao mondo 3</p>",
-                    title: "",
+                    boxStyle: "bg0",
                     children: [
                         {
                             id:1000,
+                            html: "<h1>Chi siamo?</h1><p>Siamo l'esercito del surf</p>",
+                            title: "",
+                            children: []
+                        }]
+                },
+                {
+                    id:200,
+                    html: "<p>Ciao mondo 3</p>",
+                    title: "",
+                    boxStyle: "bg1",
+                    children: [
+                        {
+                            id:2000,
                             html: "<p>Ciao mondo 11</p>",
                             title: "",
                             children: []
                         },
                         {
-                            id:1001,
+                            id:2001,
                             html: "<p>Ciao mondo 23</p>",
                             title: "",
                             children: []
                         }]
                 },
                 {
-                    id:100,
+                    id:300,
                     html: "<p>Ciao 1</p>",
                     title: "",
+                    boxStyle: "bg2",
                     children: []
                 },
                 {
-                    id:100,
+                    id:400,
                     html: "<p>Ciao 2</p>",
                     title: "",
+                    boxStyle: "bg3",
                     children: []
                 },
+                {
+                    id:500,
+                    html: "<p>Ciao 500</p>",
+                    title: "",
+                    boxStyle: "bg4",
+                    children: []
+                },
+                {
+                    id:600,
+                    html: "<p>Ciao 600</p>",
+                    title: "",
+                    boxStyle: "bg5",
+                    children: []
+                }
 
             ]
         }

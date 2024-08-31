@@ -1,7 +1,8 @@
 export type SiteDataItem = {
     id: number,
     title: string,
-    html: string
+    html: string,
+    boxStyle?: string,
     children: SiteDataItem[]
 }
 
