@@ -17,7 +17,7 @@ export class AppElement extends HTMLElement {
 }
 customElements.define('org-root', AppElement);
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
 
   function getDeviceType() {
     const width = window.innerWidth;
@@ -36,6 +36,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function setInitialSliderValues() {
+
+    console.log('Setting boxes size');
     const deviceType = getDeviceType();
     let widthFactor = 1;
     let heightFactor = 1;
@@ -101,9 +103,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-  processSiteData(data);
-  //const boxes = document.querySelectorAll('.site-data-item');
+  await processSiteData(data);
   setInitialSliderValues();
+  //const boxes = document.querySelectorAll('.site-data-item');
+  
   // boxes.forEach(box => {
   //   const item = box as unknown as HTMLElement;
   //   item.style.width = `calc(100vw / ${horizonthalFactorVar})`;
@@ -112,4 +115,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   window.addEventListener('resize', setInitialSliderValues); // Aggiorna al ridimensionamento della finestra
+
+  // (async () => {
+  //   const id = '100'; // Sostituisci con l'URL corretto del tuo JSON
+  //   try {
+  //     const siteData = await fetchSiteData(id);
+  //     console.log("Dati caricati:", siteData);
+  //   } catch (error) {
+  //     console.error("Errore durante il caricamento dei dati:", error);
+  //   }
+  // })();
 });

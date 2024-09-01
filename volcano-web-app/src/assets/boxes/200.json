@@ -1,0 +1,19 @@
+{
+    "id":200,
+    "html": "<p>Ciao mondo 3</p>",
+    "title": "",
+    "boxStyle": "bg1",
+    "children": [
+        {
+            "id":2000,
+            "html": "",
+            "title": "",
+            "children": []
+        },
+        {
+            "id":2001,
+            "html": "",
+            "title": "",
+            "children": []
+        }]
+}
