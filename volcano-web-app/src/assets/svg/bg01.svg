@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg4040"
+   width="141.64532"
+   height="139.77066"
+   viewBox="0 0 141.64533 139.77066"
+   sodipodi:docname="pagine volcano.ai"
+   inkscape:export-filename="pagine volcano.ai.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs4044">
+    <linearGradient
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="0"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(100.84527,100.84527,100.84527,-100.84527,122.4686,200.84566)"
+       spreadMethod="pad"
+       id="linearGradient4390">
+      <stop
+         style="stop-opacity:1;stop-color:#ffffff"
+         offset="0"
+         id="stop4378" />
+      <stop
+         style="stop-opacity:1;stop-color:#ffffff"
+         offset="0.00017175"
+         id="stop4380" />
+      <stop
+         style="stop-opacity:1;stop-color:#ffffff"
+         offset="0.39957823"
+         id="stop4382" />
+      <stop
+         style="stop-opacity:0.50000763;stop-color:#ffffff"
+         offset="0.5"
+         id="stop4384" />
+      <stop
+         style="stop-opacity:1;stop-color:#ffffff"
+         offset="0.60045627"
+         id="stop4386" />
+      <stop
+         style="stop-opacity:1;stop-color:#ffffff"
+         offset="1"
+         id="stop4388" />
+    </linearGradient>
+    <linearGradient
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="0"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(100.84527,100.84527,100.84527,-100.84527,122.4686,200.84566)"
+       spreadMethod="pad"
+       id="linearGradient4420">
+      <stop
+         style="stop-opacity:1;stop-color:#000000"
+         offset="0"
+         id="stop4408" />
+      <stop
+         style="stop-opacity:1;stop-color:#000000"
+         offset="0.00017175"
+         id="stop4410" />
+      <stop
+         style="stop-opacity:1;stop-color:#000000"
+         offset="0.39957823"
+         id="stop4412" />
+      <stop
+         style="stop-opacity:1;stop-color:#231f20"
+         offset="0.5"
+         id="stop4414" />
+      <stop
+         style="stop-opacity:1;stop-color:#060404"
+         offset="0.60045627"
+         id="stop4416" />
+      <stop
+         style="stop-opacity:1;stop-color:#060404"
+         offset="1"
+         id="stop4418" />
+    </linearGradient>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4368-9">
+      <path
+         d="m 127.774,303.682 c -4.418,0 -8,-3.581 -8,-8 v 0 -88.828 c 0,-4.419 3.582,-8 8,-8 v 0 h 90.234 c 4.419,0 8,3.581 8,8 v 0 88.828 c 0,4.419 -3.581,8 -8,8 v 0 z"
+         id="path4366-6" />
+    </clipPath>
+    <mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask4392-6">
+      <g
+         id="g4402-4">
+        <g
+           id="g4400-0">
+          <g
+             id="g4398-8">
+            <g
+               id="g4396-2">
+              <path
+                 d="M -32768,32767 H 32767 V -32768 H -32768 Z"
+                 style="fill:url(#linearGradient4390);stroke:none"
+                 id="path4394-0" />
+            </g>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4420"
+       id="linearGradient7950"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(100.84527,100.84527,100.84527,-100.84527,122.4686,200.84566)"
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="0"
+       spreadMethod="pad" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview4042"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     showgrid="false" />
+  <g
+     id="g4048"
+     inkscape:groupmode="layer"
+     inkscape:label="Page 1"
+     transform="matrix(1.3333333,0,0,-1.3333333,-10.48724,404.75377)">
+    <g
+       id="g4362-1"
+       transform="translate(-111.90857,-0.11666084)"
+       inkscape:export-filename="../new/drawing.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <g
+         id="g4364-1"
+         clip-path="url(#clipPath4368-9)">
+        <g
+           id="g4370-5">
+          <g
+             id="g4372-0" />
+          <g
+             id="g4404-0"
+             mask="url(#mask4392-6)">
+            <g
+               id="g4406-8">
+              <path
+                 d="m 127.774,303.682 c -4.418,0 -8,-3.581 -8,-8 v 0 -88.828 c 0,-4.419 3.582,-8 8,-8 v 0 h 90.234 c 4.419,0 8,3.581 8,8 v 0 88.828 c 0,4.419 -3.581,8 -8,8 v 0 z"
+                 style="fill:url(#linearGradient7950);stroke:none"
+                 id="path4422-3" />
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

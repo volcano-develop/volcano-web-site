@@ -1,5 +1,94 @@
 /* You can add global styles to this file, and also import other style files */
 
+
+/* CLASSI PER FONT MONTSERRAT*/
+.m100 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+  font-size: 10pt;
+}
+
+.m100i {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+  font-style: italic; 
+  font-size: 10pt;
+}
+
+.m200 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  font-size: 10pt;
+}
+
+.m200i {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  font-style: italic; 
+  font-size: 10pt;
+}
+
+.m300 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 10pt;
+}
+
+.m300i {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-style: italic; 
+  font-size: 10pt;
+}
+
+.m400 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+.m400i {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-style: italic; 
+}
+
+.m500 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+.m500i {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-style: italic; 
+}
+
+
+.m600 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+.m600i {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-style: italic; 
+}
+
+.m700 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+.m700i {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-style: italic; 
+}
+
+
+
+.svg-fill {fill: #747170; /* Colore di default */ bottom: 0;}
 .section-title{
   
 }
@@ -34,8 +123,70 @@
   transition: all 0.5s ease; /* Transizione fluida */
   margin: 0px;
   padding: 0px;
-  border: 1px dotted blue;
+  background-image: url('./assets/png/bg01.png');
+  background-size: cover;
 }
 
 
-.svg-fill {fill: #747170; /* Colore di default */ bottom: 0;}
+
+
+
+/* Stile per il contenitore principale */
+.parent {
+  display: flex;
+  justify-content: space-around; /* Spaziatura tra i box */
+  align-items: center; /* Centrato verticalmente */
+  height: 100%; /* Altezza del genitore per esempio, puoi cambiare questo valore */
+  padding: 10px;
+}
+
+/* Stile per i box */
+.box {
+  padding: 20px;
+  box-sizing: border-box; /* Include padding nelle dimensioni */
+}
+
+.box-center {
+  padding: 2px;
+  box-sizing: border-box; /* Include padding nelle dimensioni */
+  height: 100%;
+}
+
+/* Box centrale */
+.center {
+  display: flex;
+  align-items: center; /* Centrare il contenuto verticale nel box centrale */
+  justify-content: center;
+  position: relative; /* Necessario per il separatore */
+  width: 20px;
+}
+
+/* Separatore verticale */
+.separator {
+  width: 2px;
+  height: 100%;
+  background-color: black; /* Colore del separatore */
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin-right: 10px; /* Spazio dal contenuto */
+  background-image: url('./assets/png/sep01.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: contain;
+}
+
+/* Box a sinistra */
+.left {
+  flex-basis: 35%; /* Assegna 35% dello spazio */
+}
+
+/* Box a destra */
+.right {
+  flex-direction: column;
+  flex-basis: 65%; /* Assegna 65% dello spazio */
+  height: 100%; /* Imposta un'altezza fissa per contenere lo scroll */
+  overflow-y: auto; /* Mostra la barra di scorrimento verticale quando necessario */
+}

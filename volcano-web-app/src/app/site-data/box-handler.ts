@@ -28,7 +28,7 @@ function createDivElement(className: string, parentId: string, content = '') {
  async function  processSiteDataItem(item: SiteDataItem, parentElement: Element) {
     console.log(`rendering: ${item.id}`)
     // Create a div for this item
-    debugger
+    //debugger
     const boxData = await fetchSiteData(item.id.toString(), 'json') as SiteDataItem;
     const boxHtml = await fetchSiteData(item.id.toString(), 'html') as string;
     boxData.html = boxHtml;

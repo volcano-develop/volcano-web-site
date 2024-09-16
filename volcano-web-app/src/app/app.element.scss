@@ -31,7 +31,7 @@ pre {
 }
 h1,
 h2 {
-  font-size: inherit;
+  font-size: 20pt;
   font-weight: inherit;
 }
 a {
@@ -345,8 +345,9 @@ summary svg {
   background-position: center;
 }
 .bg1 {
-  background-color: black;
+  background-color: gray;
   opacity: 100%;
+  color: #f9f9f9;
 }
 .bg2 {
   background-color: blue;
