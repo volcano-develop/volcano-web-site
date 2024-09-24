@@ -117,6 +117,7 @@
 
 }
 .site-data-item {
+  display: flex;
   position: relative;
   width: 50vw;
   height: 50vh;
@@ -128,7 +129,6 @@
 
 /* Stile per il contenitore principale */
 .parent {
-  display: flex;
   flex-direction: column; /* Distribuisce gli elementi verticalmente */
   justify-content: space-between; /* Distribuisce box-header e box-cmd in cima e in fondo */
 }
@@ -144,7 +144,6 @@
 
 /* Box header leggermente spostato a sinistra */
 .box-header {
-  display: flex;
   align-items: center;
   justify-content: flex-end;
   padding-right: 20px; /* Sposta leggermente a sinistra dal bordo destro */
@@ -152,7 +151,6 @@
 
 /* Box cmd leggermente spostato a sinistra */
 .box-cmd {
-  display: flex;
   align-items: center;
   justify-content: flex-end;
   padding-right: 20px; /* Sposta leggermente a sinistra dal bordo destro */

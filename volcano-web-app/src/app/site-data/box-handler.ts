@@ -52,7 +52,7 @@ function createHeaderElement(parentId: string, numberC: number) {
 
 
 // Function to recursively process SiteDataItem and its children
-async function processSiteDataItem(item: SiteDataItem, parentElement: Element) {
+async function processSiteDataItem(item: SiteDataItem, parentElement: Element, clicked: Element | null) {
   console.log(`rendering: ${item.id}`)
   // Create a div for this item
   //debugger
@@ -61,9 +61,13 @@ async function processSiteDataItem(item: SiteDataItem, parentElement: Element) {
   boxData.html = boxHtml;
 
   const itemDiv = createDivElement('site-data-item ' + (boxData.boxStyle || ''), '', boxData.html);
-  itemDiv.prepend(createHeaderElement('', item.children.length))
-  parentElement.appendChild(itemDiv);
-
+  item.children.length && itemDiv.prepend(createHeaderElement('', item.children.length))
+  !clicked && parentElement.appendChild(itemDiv);
+  clicked && clicked.insertAdjacentElement('afterend', itemDiv);
+  console.log('itemDiv', itemDiv);
+  
+  itemDiv.style.width = `calc(100vw / ${horizonthalFactorVar})`;
+  itemDiv.style.minHeight = `calc(100vh / ${verticalFactorVar})`;
   // Add click event listener to the itemDiv
 
   if (item.children && item.children.length) {
@@ -80,38 +84,25 @@ async function processSiteDataItem(item: SiteDataItem, parentElement: Element) {
         // Check if children are already added to avoid duplication
         if (!itemDiv.classList.contains('children-added')) {
           item.children.forEach(async child => {
-            const boxDataC = await fetchSiteData(child.id.toString(), 'json') as SiteDataItem;
-            const boxHtmlC = await fetchSiteData(child.id.toString(), 'html') as string;
-            boxDataC.html = boxHtmlC;
-            // Create and insert each child element after the parent
-            const childDiv = createDivElement('site-data-item ' + (boxData.boxStyle || ''), item.id.toString(), boxDataC.html);
-            itemDiv.insertAdjacentElement('afterend', childDiv);
-
-            childDiv.style.width = `calc(100vw / ${horizonthalFactorVar})`;
-            childDiv.style.minHeight = `calc(100vh / ${verticalFactorVar})`;
-
-            // Optionally, set up child click handler if they also have children
-            if (child.children && child.children.length > 0) {
-              await processSiteDataItem(child, itemDiv.parentElement!); // Recursive call for each child
-            }
+            await processSiteDataItem(child,parentElement,itemDiv)
           });
           itemDiv.classList.add('children-added'); // Mark this item as having added children
         } else {
           removeDivsByParentId(item.id.toString());
           itemDiv.classList.remove('children-added'); // Mark this item as having added children
         }
-
-
       }
     });
-
-    if (item.hasGoto) {
-      const cmdDiv = createGotoElement('');
-      const p = itemDiv ? itemDiv.querySelector('.parent') : null;
-      p && p.appendChild(cmdDiv);
-    }
     (cmdC as HTMLElement).style.cursor = 'pointer';
   }
+
+  if (item.hasGoto) {
+    const cmdDiv = createGotoElement('');
+    const p = itemDiv ? itemDiv.querySelector('.parent') : null;
+    p && p.appendChild(cmdDiv);
+  }
+
+
   console.log(`rendered: ${item.id}`)
 }
 
@@ -130,7 +121,7 @@ async function processSiteSection(section: SiteSection, parentElement: Element) 
   // section.data.forEach(async item => await processSiteDataItem(item, sectionConntentDIv));
 
   // Process each SiteDataItem in the site data, ensuring all are awaited
-  const boxPromises = section.data.map(box => processSiteDataItem(box, sectionConntentDIv));
+  const boxPromises = section.data.map(box => processSiteDataItem(box, sectionConntentDIv, null));
   await Promise.all(boxPromises); // Wait for all sections to be processed
 
   console.log('All boxex processed'); // Will be logged once all sections are done
