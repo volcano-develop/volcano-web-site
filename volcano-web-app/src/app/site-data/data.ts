@@ -23,36 +23,49 @@ export const data: SiteData = {
                     children: [
                         {
                             id:1000,
-                            children: []
-                        }]
+                            children: [],
+                            hasGoto: true
+                        }],
+                        hasGoto: false
                 },
                 {
                     id:200,
                     children: [
                         {
                             id:2000,
-                            children: []
+                            children: [],
+                            hasGoto: true
                         },
                         {
                             id:2001,
-                            children: []
-                        }]
+                            children: [],
+                            hasGoto: false
+                        }],
+                        hasGoto: false
                 },
                 {
                     id:300,
-                    children: []
+                    children: [{
+                        id:3001,
+                        children: [],
+                        hasGoto: true
+                    }],
+                    hasGoto: true
                 },
                 {
                     id:400,
-                    children: []
+                    children: [],
+                    hasGoto: false
                 },
                 {
                     id:500,
-                    children: []
+                    children: [],
+                    hasGoto: false
                 },
                 {
                     id:600,
-                    children: []
+                    children: [],
+                    hasGoto: false
                 }
 
             ]

@@ -120,57 +120,79 @@
   position: relative;
   width: 50vw;
   height: 50vh;
-  transition: all 0.5s ease; /* Transizione fluida */
+  transition: all 0.5s ease;
   margin: 0px;
   padding: 0px;
-  background-image: url('./assets/png/bg01.png');
-  background-size: cover;
+  background-color: black !important;
 }
-
-
-
-
 
 /* Stile per il contenitore principale */
 .parent {
   display: flex;
+  flex-direction: column; /* Distribuisce gli elementi verticalmente */
+  justify-content: space-between; /* Distribuisce box-header e box-cmd in cima e in fondo */
+}
+
+/* Stile per il contenitore di contenuto */
+.content-box {
+  display: flex;
   justify-content: space-around; /* Spaziatura tra i box */
   align-items: center; /* Centrato verticalmente */
-  height: 100%; /* Altezza del genitore per esempio, puoi cambiare questo valore */
-  padding: 10px;
+  flex-grow: 1; /* Permette al contenuto di crescere per occupare lo spazio tra box-header e box-cmd */
+
+}
+
+/* Box header leggermente spostato a sinistra */
+.box-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 20px; /* Sposta leggermente a sinistra dal bordo destro */
+}
+
+/* Box cmd leggermente spostato a sinistra */
+.box-cmd {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 20px; /* Sposta leggermente a sinistra dal bordo destro */
+}
+
+.icon-cmd {
+  font-size: 24px;
+  margin-right: 8px;
 }
 
 /* Stile per i box */
 .box {
   padding: 20px;
-  box-sizing: border-box; /* Include padding nelle dimensioni */
+  box-sizing: border-box;
 }
 
 .box-center {
   padding: 2px;
-  box-sizing: border-box; /* Include padding nelle dimensioni */
+  box-sizing: border-box;
   height: 100%;
 }
 
-/* Box centrale */
 .center {
   display: flex;
-  align-items: center; /* Centrare il contenuto verticale nel box centrale */
+  align-items: center;
   justify-content: center;
-  position: relative; /* Necessario per il separatore */
+  position: relative;
   width: 20px;
+  height: 100px;
 }
 
 /* Separatore verticale */
 .separator {
   width: 2px;
   height: 100%;
-  background-color: black; /* Colore del separatore */
   position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
-  margin-right: 10px; /* Spazio dal contenuto */
+  margin-right: 10px;
   background-image: url('./assets/png/sep01.png');
   background-position: center;
   background-repeat: no-repeat;
@@ -180,13 +202,13 @@
 
 /* Box a sinistra */
 .left {
-  flex-basis: 35%; /* Assegna 35% dello spazio */
+  flex-basis: 35%;
 }
 
 /* Box a destra */
 .right {
   flex-direction: column;
-  flex-basis: 65%; /* Assegna 65% dello spazio */
-  height: 100%; /* Imposta un'altezza fissa per contenere lo scroll */
-  overflow-y: auto; /* Mostra la barra di scorrimento verticale quando necessario */
+  flex-basis: 65%;
+  height: 100%;
+  overflow-y: auto;
 }

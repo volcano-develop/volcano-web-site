@@ -4,6 +4,7 @@ export type SiteDataItem = {
     html?: string,
     boxStyle?: string,
     children: SiteDataItem[]
+    hasGoto: boolean;
 }
 
 export type SiteSection = {

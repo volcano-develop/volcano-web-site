@@ -23,7 +23,8 @@ export async function fetchSiteData(id: string, kind: 'html' | 'json'): Promise<
                     title: item.title || "",
                     html: item.html || "",
                     boxStyle: item.boxStyle,
-                    children: item.children ? item.children.map(mapToSiteDataItem) : []
+                    children: item.children ? item.children.map(mapToSiteDataItem) : [],
+                    hasGoto: item.hasGoto
                 };
             }
 
