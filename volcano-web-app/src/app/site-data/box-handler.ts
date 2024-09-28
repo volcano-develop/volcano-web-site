@@ -52,18 +52,18 @@ function createHeaderElement(parentId: string, numberC: number) {
 
 
 // Function to recursively process SiteDataItem and its children
-async function processSiteDataItem(item: SiteDataItem, parentElement: Element, clicked: Element | null) {
+async function processSiteDataItem(item: SiteDataItem, parentElement: Element, clicked: Element | null, parentId: string ='') {
   console.log(`rendering: ${item.id}`)
   // Create a div for this item
   //debugger
   const boxData = await fetchSiteData(item.id.toString(), 'json') as SiteDataItem;
   const boxHtml = await fetchSiteData(item.id.toString(), 'html') as string;
   boxData.html = boxHtml;
-
-  const itemDiv = createDivElement('site-data-item ' + (boxData.boxStyle || ''), '', boxData.html);
+  const itemDiv = createDivElement('site-data-item ' + (boxData.boxStyle || ''), parentId, boxData.html);
   item.children.length && itemDiv.prepend(createHeaderElement('', item.children.length))
   !clicked && parentElement.appendChild(itemDiv);
   clicked && clicked.insertAdjacentElement('afterend', itemDiv);
+  clicked && clicked.classList.add('children-added');
   console.log('itemDiv', itemDiv);
   
   itemDiv.style.width = `calc(100vw / ${horizonthalFactorVar})`;
@@ -84,7 +84,7 @@ async function processSiteDataItem(item: SiteDataItem, parentElement: Element, c
         // Check if children are already added to avoid duplication
         if (!itemDiv.classList.contains('children-added')) {
           item.children.forEach(async child => {
-            await processSiteDataItem(child,parentElement,itemDiv)
+            await processSiteDataItem(child,parentElement,itemDiv, item.id?.toString())
           });
           itemDiv.classList.add('children-added'); // Mark this item as having added children
         } else {

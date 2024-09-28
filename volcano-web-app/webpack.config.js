@@ -14,7 +14,7 @@ module.exports = {
       compiler: 'swc',
       main: './src/main.ts',
       index: './src/index.html',
-      baseHref: '/',
+      baseHref: '/demo/',
       assets: ['./src/favicon.ico', './src/assets'],
       styles: ['./src/styles.scss'],
       outputHashing: process.env['NODE_ENV'] === 'production' ? 'all' : 'none',
