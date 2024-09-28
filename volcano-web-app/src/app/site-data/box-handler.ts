@@ -96,7 +96,7 @@ async function processSiteDataItem(item: SiteDataItem, parentElement: Element, c
     (cmdC as HTMLElement).style.cursor = 'pointer';
   }
 
-  if (item.hasGoto) {
+  if (item.hasGoto && !item.children?.length) {
     const cmdDiv = createGotoElement('');
     const p = itemDiv ? itemDiv.querySelector('.parent') : null;
     p && p.appendChild(cmdDiv);
@@ -117,12 +117,15 @@ async function processSiteSection(section: SiteSection, parentElement: Element) 
   parentElement.appendChild(sectionDiv);
   sectionDiv.appendChild(sectionConntentDIv);
 
-  // // Process each SiteDataItem in the section
-  // section.data.forEach(async item => await processSiteDataItem(item, sectionConntentDIv));
-
   // Process each SiteDataItem in the site data, ensuring all are awaited
-  const boxPromises = section.data.map(box => processSiteDataItem(box, sectionConntentDIv, null));
-  await Promise.all(boxPromises); // Wait for all sections to be processed
+  //const boxPromises = section.data.map(box => processSiteDataItem(box, sectionConntentDIv, null));
+
+  for (let ind=0; ind < section.data.length; ind++){
+    const box = section.data[ind];
+    await processSiteDataItem(box, sectionConntentDIv, null);
+  }
+
+  //await Promise.all(boxPromises); // Wait for all sections to be processed
 
   console.log('All boxex processed'); // Will be logged once all sections are done
 }

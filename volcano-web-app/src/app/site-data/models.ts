@@ -5,6 +5,7 @@ export type SiteDataItem = {
     boxStyle?: string,
     children: SiteDataItem[]
     hasGoto: boolean;
+    sort: number;
 }
 
 export type SiteSection = {

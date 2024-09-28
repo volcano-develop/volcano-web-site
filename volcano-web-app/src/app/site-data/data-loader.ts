@@ -24,7 +24,8 @@ export async function fetchSiteData(id: string, kind: 'html' | 'json'): Promise<
                     html: item.html || "",
                     boxStyle: item.boxStyle,
                     children: item.children ? item.children.map(mapToSiteDataItem) : [],
-                    hasGoto: item.hasGoto
+                    hasGoto: item.hasGoto,
+                    sort: item.sort
                 };
             }
 

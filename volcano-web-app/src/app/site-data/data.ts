@@ -24,9 +24,11 @@ export const data: SiteData = {
                         {
                             id:1000,
                             children: [],
-                            hasGoto: true
+                            hasGoto: true,
+                            sort: 10
                         }],
-                        hasGoto: false
+                        hasGoto: false,
+                        sort:10
                 },
                 {
                     id:200,
@@ -34,38 +36,46 @@ export const data: SiteData = {
                         {
                             id:2000,
                             children: [],
-                            hasGoto: true
+                            hasGoto: true,
+                            sort: 10
                         },
                         {
                             id:2001,
                             children: [],
-                            hasGoto: false
+                            hasGoto: false,
+                            sort:10
                         }],
-                        hasGoto: false
+                        hasGoto: false,
+                        sort:20
                 },
                 {
                     id:300,
                     children: [{
                         id:3001,
                         children: [],
-                        hasGoto: true
+                        hasGoto: true,
+                        sort:10
                     }],
-                    hasGoto: true
+                    hasGoto: true,
+                    sort: 30
                 },
                 {
                     id:400,
                     children: [],
-                    hasGoto: false
+                    hasGoto: false,
+                    sort: 40
                 },
                 {
                     id:500,
                     children: [],
-                    hasGoto: false
+                    hasGoto: false,
+                    sort: 50
                 },
                 {
                     id:600,
                     children: [],
-                    hasGoto: false
+                    hasGoto: false,
+                    sort: 60
                 }
 
             ]
