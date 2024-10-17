@@ -1,4 +1,5 @@
 import './app.element.scss';
+import { openModal, setModal } from './modal/modal';
 import { processSiteData } from './site-data/box-handler';
 import { data, horizonthalFactorVar, setHorizonthalFactor, setVerticalFactor, verticalFactorVar } from './site-data/data';
 
@@ -12,13 +13,24 @@ export class AppElement extends HTMLElement {
         
       </div>
     </div>
+
+    <div id="overlay" class="overlay hidden"></div>
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <div id="modal-content">Questo è il contenuto della modale.</div>
+      </div>
+    </div>
       `;
   }
 }
 customElements.define('org-root', AppElement);
 
+(document as any).openModal = ()=> openModal("500px", "300px");
+
 document.addEventListener('DOMContentLoaded', async function () {
 
+  setModal();
   function getDeviceType() {
     const width = window.innerWidth;
     const height = window.innerHeight;

@@ -442,3 +442,65 @@ summary svg {
   background-repeat: no-repeat;
   background-position: center;
 }
+
+/*modale*/ 
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-trasparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modale */
+.modal {
+  position: absolute;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 1001;
+  
+  /* Centro lo schermo */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: darkgray;
+  height: 90vh;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  height: 100%;
+  color: white;
+}
+
+.close {
+  align-self: flex-end;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Opzioni personalizzate */
+.modal.small {
+  width: 300px;
+  height: 200px;
+}
+
+.modal.large {
+  width: 600px;
+  height: 400px;
+}

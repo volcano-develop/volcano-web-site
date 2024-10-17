@@ -1,9 +1,9 @@
 import { assetsUrl } from "./data";
 import { SiteDataItem } from "./models";
 
-export async function fetchSiteData(id: string, kind: 'html' | 'json'): Promise<SiteDataItem | string | undefined> {
+export async function fetchSiteData(id: string, kind: 'html' | 'json', folder: string): Promise<SiteDataItem | string | undefined> {
     try {
-        const url = `${assetsUrl}boxes/${id}.${kind}`;
+        const url = `${assetsUrl}${folder}/${id}.${kind}`;
         // Esegui la richiesta HTTP per ottenere i dati JSON
         const response = await fetch(url);
 

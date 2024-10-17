@@ -1,3 +1,4 @@
+import { openModal } from "../modal/modal";
 import { verticalFactorVar, horizonthalFactorVar } from "./data";
 import { fetchSiteData } from "./data-loader";
 import { SiteData, SiteDataItem, SiteSection } from "./models";
@@ -33,10 +34,13 @@ function createOpenChildrenElement(parentId: string) {
   return div;
 }
 
-function createGotoElement(parentId: string) {
+function createGotoElement(id: number, parentId: string) {
   const div = document.createElement('div');
   div.className = 'box-cmd';
   div.innerHTML = '<p id="explore-cmd">Go to <span class="icon-cmd">&#9662;</span> </p>';
+  div.addEventListener('click', function (event) {
+    openModal(`${id}`, '90vw', '90wh');
+  });
   parentId && div.setAttribute('parent-id', parentId);
   return div;
 }
@@ -52,12 +56,12 @@ function createHeaderElement(parentId: string, numberC: number) {
 
 
 // Function to recursively process SiteDataItem and its children
-async function processSiteDataItem(item: SiteDataItem, parentElement: Element, clicked: Element | null, parentId: string ='') {
+async function processSiteDataItem(item: SiteDataItem, parentElement: Element, clicked: Element | null, parentId: string = '') {
   console.log(`rendering: ${item.id}`)
   // Create a div for this item
   //debugger
-  const boxData = await fetchSiteData(item.id.toString(), 'json') as SiteDataItem;
-  const boxHtml = await fetchSiteData(item.id.toString(), 'html') as string;
+  const boxData = await fetchSiteData(item.id.toString(), 'json', 'boxes') as SiteDataItem;
+  const boxHtml = await fetchSiteData(item.id.toString(), 'html', 'boxes') as string;
   boxData.html = boxHtml;
   const itemDiv = createDivElement('site-data-item ' + (boxData.boxStyle || ''), parentId, boxData.html);
   item.children.length && itemDiv.prepend(createHeaderElement('', item.children.length))
@@ -65,7 +69,7 @@ async function processSiteDataItem(item: SiteDataItem, parentElement: Element, c
   clicked && clicked.insertAdjacentElement('afterend', itemDiv);
   clicked && clicked.classList.add('children-added');
   console.log('itemDiv', itemDiv);
-  
+
   itemDiv.style.width = `calc(100vw / ${horizonthalFactorVar})`;
   itemDiv.style.minHeight = `calc(100vh / ${verticalFactorVar})`;
   // Add click event listener to the itemDiv
@@ -84,7 +88,7 @@ async function processSiteDataItem(item: SiteDataItem, parentElement: Element, c
         // Check if children are already added to avoid duplication
         if (!itemDiv.classList.contains('children-added')) {
           item.children.forEach(async child => {
-            await processSiteDataItem(child,parentElement,itemDiv, item.id?.toString())
+            await processSiteDataItem(child, parentElement, itemDiv, item.id?.toString())
           });
           itemDiv.classList.add('children-added'); // Mark this item as having added children
         } else {
@@ -97,9 +101,9 @@ async function processSiteDataItem(item: SiteDataItem, parentElement: Element, c
   }
 
   if (item.hasGoto && !item.children?.length) {
-    const cmdDiv = createGotoElement('');
+    const cmdDiv = createGotoElement(item.id, '');
     const p = itemDiv ? itemDiv.querySelector('.parent') : null;
-    p && p.appendChild(cmdDiv);
+    itemDiv && itemDiv.appendChild(cmdDiv);
   }
 
 
@@ -120,7 +124,7 @@ async function processSiteSection(section: SiteSection, parentElement: Element) 
   // Process each SiteDataItem in the site data, ensuring all are awaited
   //const boxPromises = section.data.map(box => processSiteDataItem(box, sectionConntentDIv, null));
 
-  for (let ind=0; ind < section.data.length; ind++){
+  for (let ind = 0; ind < section.data.length; ind++) {
     const box = section.data[ind];
     await processSiteDataItem(box, sectionConntentDIv, null);
   }

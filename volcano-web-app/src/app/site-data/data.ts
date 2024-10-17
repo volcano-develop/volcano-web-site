@@ -62,7 +62,7 @@ export const data: SiteData = {
                 {
                     id:400,
                     children: [],
-                    hasGoto: false,
+                    hasGoto: true,
                     sort: 40
                 },
                 {

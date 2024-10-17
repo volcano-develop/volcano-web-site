@@ -132,6 +132,7 @@
 .parent {
   flex-direction: column; /* Distribuisce gli elementi verticalmente */
   justify-content: space-between; /* Distribuisce box-header e box-cmd in cima e in fondo */
+  min-height: 90%;
 }
 
 /* Stile per il contenitore di contenuto */
