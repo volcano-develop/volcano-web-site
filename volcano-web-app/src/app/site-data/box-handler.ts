@@ -29,9 +29,22 @@ function createDivElement(className: string, parentId: string, content = '') {
 function createOpenChildrenElement(parentId: string) {
   const div = document.createElement('div');
   div.className = 'box-cmd';
-  div.innerHTML = '<p id="explore-cmd">explore sub items <span class="icon-cmd">&#9662;</span> </p>';
+  div.innerHTML = '<p id="explore-cmd"><span class="text-cmd">explore sub items </span><span class="icon-cmd">&#9662;</span> </p>';
   parentId && div.setAttribute('parent-id', parentId);
   return div;
+}
+
+function toggleOpenChildrem(open: boolean, box: HTMLElement) {
+  var elT = box.getElementsByClassName('text-cmd')[0];
+  var elI = box.getElementsByClassName('icon-cmd')[0];
+
+  if (open) {
+    elT.innerHTML = 'close sub items';
+    elI.innerHTML = '&#9652;';
+  } else {
+    elT.innerHTML = 'explore sub items';
+    elI.innerHTML = '&#9662;';
+  }
 }
 
 function createGotoElement(id: number, parentId: string) {
@@ -91,9 +104,11 @@ async function processSiteDataItem(item: SiteDataItem, parentElement: Element, c
             await processSiteDataItem(child, parentElement, itemDiv, item.id?.toString())
           });
           itemDiv.classList.add('children-added'); // Mark this item as having added children
+          toggleOpenChildrem(true, itemDiv);
         } else {
           removeDivsByParentId(item.id.toString());
           itemDiv.classList.remove('children-added'); // Mark this item as having added children
+          toggleOpenChildrem(false, itemDiv);
         }
       }
     });
